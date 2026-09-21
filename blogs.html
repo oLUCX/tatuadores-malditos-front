@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Noticias y casos curiosos del mundo del tatuaje.">
+    <title>Blogs - Tatuadores Malditos</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="blogs">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
+    <header class="cabecera">
+        <nav class="navbar navbar-expand-lg navbar-tinta" aria-label="Menú principal">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.svg" alt="" width="34" height="34">
+                    <span>Tatuadores Malditos</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tatuadores.html">Tatuadores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blogs.html" aria-current="page">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+
+                    <div class="zona-derecha">
+                        <div id="zonaSesion">
+                            <a class="enlace-sesion" href="login.html">Iniciar sesión</a>
+                            <span class="separador-sesion">|</span>
+                            <a class="enlace-sesion" href="registro.html">Registrar usuario</a>
+                        </div>
+                        <a class="btn-solicitud" href="solicitud.html" aria-label="Ver mi solicitud de cita">
+                            <img src="img/solicitud.svg" alt="" width="22" height="22">
+                            <span>Mi solicitud (<span id="contadorSolicitud">0</span>)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido" class="seccion">
+        <div class="container">
+            <h1 class="titulo-seccion">Noticias importantes</h1>
+            <p class="subtitulo-seccion">Datos curiosos del mundo del tatuaje.</p>
+
+            <article class="tarjeta-blog">
+                <div class="row align-items-center g-4">
+                    <div class="col-md-6">
+                        <h2>Caso curioso #1</h2>
+                        <h3 class="h5">El tatuaje más antiguo: la historia de Ötzi</h3>
+                        <p>Hace más de 5.000 años un hombre murió en los Alpes y quedó conservado en el hielo. Su piel guardaba decenas de tatuajes. ¿Para qué se los hizo?</p>
+                        <a class="btn btn-dark" href="blog-detalle-1.html">Ver caso</a>
+                    </div>
+                    <div class="col-md-6">
+                        <figure class="m-0">
+                            <img src="img/blog-otzi.svg" alt="Paisaje de montañas nevadas con seis líneas rojas, como los tatuajes de Ötzi" width="800" height="450">
+                        </figure>
+                    </div>
+                </div>
+            </article>
+
+            <article class="tarjeta-blog">
+                <div class="row align-items-center g-4">
+                    <div class="col-md-6 order-md-2">
+                        <h2>Caso curioso #2</h2>
+                        <h3 class="h5">¿Por qué un tatuaje no se borra solo?</h3>
+                        <p>La piel se renueva todo el tiempo, entonces ¿por qué la tinta se queda? La respuesta está en las capas de la piel.</p>
+                        <a class="btn btn-dark" href="blog-detalle-2.html">Ver caso</a>
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <figure class="m-0">
+                            <img src="img/blog-piel.svg" alt="Diagrama de las capas de la piel con puntos de tinta en la dermis" width="800" height="450">
+                        </figure>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="pie">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h2>Tatuadores Malditos</h2>
+                    <p>Marketplace que conecta a clientes con tatuadores: explora perfiles, mira sus trabajos y envía tu solicitud de cita.</p>
+                    <p class="mb-0">
+                        contacto@tatuadoresmalditos.cl<br>
+                        Santiago, Chile
+                    </p>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <h2>Estilos</h2>
+                    <ul>
+                        <li><a href="tatuadores.html?estilo=Realismo">Realismo</a></li>
+                        <li><a href="tatuadores.html?estilo=Tradicional">Tradicional</a></li>
+                        <li><a href="tatuadores.html?estilo=Blackwork">Blackwork</a></li>
+                        <li><a href="tatuadores.html?estilo=Neotradicional">Neotradicional</a></li>
+                        <li><a href="tatuadores.html?estilo=Minimalista">Minimalista</a></li>
+                    </ul>
+                    <h2 class="mt-3">Información</h2>
+                    <ul>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h2>Newsletter</h2>
+                    <p>Suscríbete y entérate de los nuevos tatuadores y de sus cupos disponibles.</p>
+                    <form id="formNewsletter" novalidate>
+                        <div class="mb-2">
+                            <label for="correoNewsletter" class="visually-hidden">Correo para el newsletter</label>
+                            <input type="email" class="form-control" id="correoNewsletter" name="correoNewsletter" placeholder="Tu correo (ej: nombre@gmail.com)" autocomplete="email" required>
+                            <div class="invalid-feedback"></div>
+                            <div class="sugerencia"></div>
+                        </div>
+                        <button type="submit" class="btn btn-acento w-100">Suscribirme</button>
+                    </form>
+                    <div id="mensajeNewsletter" class="mt-2"></div>
+                </div>
+            </div>
+
+            <p class="derechos mb-0">© 2026 Tatuadores Malditos · Proyecto de Desarrollo Full Stack II, Duoc UC</p>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/almacen.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/solicitud.js"></script>
+    <script src="js/validaciones.js"></script>
+    <script src="js/tienda.js"></script>
+</body>
+</html>
