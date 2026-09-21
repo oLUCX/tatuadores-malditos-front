@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img"><rect width="600" height="600" fill="#b8213c"/><rect x="14" y="14" width="572" height="572" fill="none" stroke="#6f1425" stroke-width="2" opacity="0.45"/><path d="M110 300 C 190 190, 410 190, 490 300 C 410 410, 190 410, 110 300 Z" fill="#16161d"/>
+<circle cx="300" cy="300" r="82" fill="#f1ede2"/>
+<circle cx="300" cy="300" r="52" fill="#b8213c"/>
+<circle cx="278" cy="278" r="16" fill="#16161d"/>
+<g stroke="#16161d" stroke-width="7" stroke-linecap="round">
+<line x1="160" y1="222" x2="140" y2="190"/><line x1="230" y1="192" x2="220" y2="156"/><line x1="300" y1="182" x2="300" y2="144"/>
+<line x1="370" y1="192" x2="380" y2="156"/><line x1="440" y1="222" x2="460" y2="190"/></g><text x="300" y="560" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" letter-spacing="6" fill="#6f1425">REALISMO</text></svg>

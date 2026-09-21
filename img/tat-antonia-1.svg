@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img"><rect width="600" height="600" fill="#23232e"/><rect x="14" y="14" width="572" height="572" fill="none" stroke="#8a8578" stroke-width="2" opacity="0.45"/><ellipse cx="220" cy="240" rx="110" ry="80" transform="rotate(-25 220 240)" fill="#b8213c" stroke="#f1ede2" stroke-width="10"/>
+<ellipse cx="380" cy="240" rx="110" ry="80" transform="rotate(25 380 240)" fill="#b8213c" stroke="#f1ede2" stroke-width="10"/>
+<ellipse cx="238" cy="370" rx="80" ry="58" transform="rotate(25 238 370)" fill="#f1ede2"/>
+<ellipse cx="362" cy="370" rx="80" ry="58" transform="rotate(-25 362 370)" fill="#f1ede2"/>
+<rect x="286" y="190" width="28" height="240" rx="14" fill="#23232e" stroke="#f1ede2" stroke-width="8"/>
+<path d="M296 190 C 270 140, 240 130, 220 140 M304 190 C 330 140, 360 130, 380 140" fill="none" stroke="#f1ede2" stroke-width="7" stroke-linecap="round"/><text x="300" y="560" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" letter-spacing="6" fill="#8a8578">NEOTRADICIONAL</text></svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img"><rect width="600" height="600" fill="#23232e"/><rect x="14" y="14" width="572" height="572" fill="none" stroke="#8a8578" stroke-width="2" opacity="0.45"/><circle cx="300" cy="150" r="32" fill="none" stroke="#f1ede2" stroke-width="16"/>
+<line x1="300" y1="182" x2="300" y2="440" stroke="#f1ede2" stroke-width="18" stroke-linecap="round"/>
+<line x1="230" y1="240" x2="370" y2="240" stroke="#f1ede2" stroke-width="18" stroke-linecap="round"/>
+<path d="M150 360 C 160 460, 440 460, 450 360" fill="none" stroke="#f1ede2" stroke-width="18" stroke-linecap="round"/>
+<polygon points="135,352 175,372 150,400" fill="#b8213c"/><polygon points="465,352 425,372 450,400" fill="#b8213c"/><text x="300" y="560" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" letter-spacing="6" fill="#8a8578">TRADICIONAL</text></svg>
