@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encuentra al tatuador ideal: explora perfiles, mira sus trabajos, filtra por estilo y ciudad y envía tu solicitud de cita.">
+    <title>Tatuadores Malditos - Marketplace de tatuadores</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="home">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
+    <header class="cabecera">
+        <nav class="navbar navbar-expand-lg navbar-tinta" aria-label="Menú principal">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.svg" alt="" width="34" height="34">
+                    <span>Tatuadores Malditos</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tatuadores.html">Tatuadores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+
+                    <div class="zona-derecha">
+                        <div id="zonaSesion">
+                            <a class="enlace-sesion" href="login.html">Iniciar sesión</a>
+                            <span class="separador-sesion">|</span>
+                            <a class="enlace-sesion" href="registro.html">Registrar usuario</a>
+                        </div>
+                        <a class="btn-solicitud" href="solicitud.html" aria-label="Ver mi solicitud de cita">
+                            <img src="img/solicitud.svg" alt="" width="22" height="22">
+                            <span>Mi solicitud (<span id="contadorSolicitud">0</span>)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <section class="hero" aria-labelledby="tituloHero">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <p class="etiqueta-hero">Marketplace de tatuadores</p>
+                        <h1 id="tituloHero">Encuentra al tatuador ideal para tu <span>próximo tatuaje</span></h1>
+                        <p class="lead">Explora perfiles, mira los trabajos de cada artista, filtra por estilo y ciudad y envía tu solicitud de cita. Todo en un solo lugar.</p>
+                        <a class="btn btn-acento btn-lg" href="tatuadores.html">Buscar tatuadores</a>
+                        <a class="btn btn-outline-light btn-lg ms-2" href="#soyTatuador">¿Eres tatuador?</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <figure class="m-0">
+                            <img src="img/hero.svg" alt="Calavera con dos dagas cruzadas, el emblema de Tatuadores Malditos" width="800" height="600" class="img-fluid">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion" aria-labelledby="tituloDestacados">
+            <div class="container">
+                <h2 id="tituloDestacados" class="titulo-seccion">Tatuadores destacados</h2>
+                <p class="subtitulo-seccion">Artistas con cupos disponibles este mes.</p>
+                <div class="row g-4" id="listaDestacados"></div>
+                <div class="text-center mt-4">
+                    <a class="btn btn-outline-dark" href="tatuadores.html">Ver todos los tatuadores</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion pt-0" aria-labelledby="tituloComo">
+            <div class="container">
+                <h2 id="tituloComo" class="titulo-seccion">Cómo funciona</h2>
+                <p class="subtitulo-seccion">De la idea a tu cita, en tres pasos.</p>
+                <div class="row g-4 text-center">
+                    <div class="col-md-4">
+                        <div class="paso-numero mx-auto mb-3">1</div>
+                        <h3 class="h5">Explora y filtra</h3>
+                        <p class="text-muted">Busca por estilo, ciudad o nombre y mira quién tiene cupos.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="paso-numero mx-auto mb-3">2</div>
+                        <h3 class="h5">Revisa su perfil</h3>
+                        <p class="text-muted">Mira la galería de trabajos, el precio por hora y el estudio.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="paso-numero mx-auto mb-3">3</div>
+                        <h3 class="h5">Envía tu solicitud</h3>
+                        <p class="text-muted">Elige las horas estimadas y el tatuador te responde.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion pt-0" aria-labelledby="tituloEstilos">
+            <div class="container">
+                <h2 id="tituloEstilos" class="titulo-seccion">Explora por estilo</h2>
+                <p class="subtitulo-seccion">Cada estilo tiene su propia historia.</p>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-4"><article class="dato-estudio"><h3 class="h5"><a href="tatuadores.html?estilo=Realismo">Realismo</a></h3><p class="mb-0">Retratos, ojos y flores con sombras y detalle fotográfico.</p></article></div>
+                    <div class="col-sm-6 col-lg-4"><article class="dato-estudio"><h3 class="h5"><a href="tatuadores.html?estilo=Tradicional">Tradicional</a></h3><p class="mb-0">Trazo grueso, colores sólidos y diseños clásicos.</p></article></div>
+                    <div class="col-sm-6 col-lg-4"><article class="dato-estudio"><h3 class="h5"><a href="tatuadores.html?estilo=Blackwork">Blackwork</a></h3><p class="mb-0">Solo tinta negra: geométrico, mandalas y gran formato.</p></article></div>
+                    <div class="col-sm-6 col-lg-4"><article class="dato-estudio"><h3 class="h5"><a href="tatuadores.html?estilo=Neotradicional">Neotradicional</a></h3><p class="mb-0">Línea tradicional con más color y sombreado.</p></article></div>
+                    <div class="col-sm-6 col-lg-4"><article class="dato-estudio"><h3 class="h5"><a href="tatuadores.html?estilo=Minimalista">Minimalista</a></h3><p class="mb-0">Línea fina y diseños pequeños, ideal para un primer tatuaje.</p></article></div>
+                    <div class="col-sm-6 col-lg-4"><article class="dato-estudio"><h3 class="h5"><a href="tatuadores.html">Ver todos</a></h3><p class="mb-0">Recorre todos los perfiles y filtra a tu manera.</p></article></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion seccion-oscura" aria-labelledby="tituloVideo">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-5">
+                        <h2 id="tituloVideo">Cuida tu tatuaje en 3 pasos</h2>
+                        <p>Antes de tu primera sesión, mira este video corto: los primeros días después de tatuarte son los más importantes para que cicatrice bien.</p>
+                        <a class="btn btn-acento" href="blog-detalle-2.html">Leer más sobre la piel y la tinta</a>
+                    </div>
+                    <div class="col-lg-7 contenedor-video">
+                        <video controls preload="metadata" poster="video/poster.jpg" width="960" height="540">
+                            <source src="video/cuidado-tatuaje.mp4" type="video/mp4">
+                            Tu navegador no puede reproducir este video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion" id="soyTatuador" aria-labelledby="tituloTatuador">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <h2 id="tituloTatuador">¿Eres tatuador? Publica tu perfil</h2>
+                        <p>Muestra tus trabajos, recibe solicitudes de cita y controla tus cupos del mes desde tu propio panel.</p>
+                        <ul>
+                            <li>Galería de trabajos y precio por hora visibles para todos.</li>
+                            <li>Solicitudes de clientes que puedes aceptar o rechazar.</li>
+                            <li>Alerta cuando te quedan pocos cupos.</li>
+                        </ul>
+                        <a class="btn btn-acento" href="contacto.html">Escríbenos para publicar tu perfil</a>
+                    </div>
+                    <div class="col-lg-5">
+                        <article class="dato-estudio">
+                            <h3 class="h5">Sin costo de publicación</h3>
+                            <p class="mb-0">Durante esta etapa del proyecto el equipo crea tu perfil por ti. Escríbenos con tu nombre artístico, estilo, ciudad y tus mejores trabajos.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h2>Tatuadores Malditos</h2>
+                    <p>Marketplace que conecta a clientes con tatuadores: explora perfiles, mira sus trabajos y envía tu solicitud de cita.</p>
+                    <p class="mb-0">
+                        contacto@tatuadoresmalditos.cl<br>
+                        Santiago, Chile
+                    </p>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <h2>Estilos</h2>
+                    <ul>
+                        <li><a href="tatuadores.html?estilo=Realismo">Realismo</a></li>
+                        <li><a href="tatuadores.html?estilo=Tradicional">Tradicional</a></li>
+                        <li><a href="tatuadores.html?estilo=Blackwork">Blackwork</a></li>
+                        <li><a href="tatuadores.html?estilo=Neotradicional">Neotradicional</a></li>
+                        <li><a href="tatuadores.html?estilo=Minimalista">Minimalista</a></li>
+                    </ul>
+                    <h2 class="mt-3">Información</h2>
+                    <ul>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h2>Newsletter</h2>
+                    <p>Suscríbete y entérate de los nuevos tatuadores y de sus cupos disponibles.</p>
+                    <form id="formNewsletter" novalidate>
+                        <div class="mb-2">
+                            <label for="correoNewsletter" class="visually-hidden">Correo para el newsletter</label>
+                            <input type="email" class="form-control" id="correoNewsletter" name="correoNewsletter" placeholder="Tu correo (ej: nombre@gmail.com)" autocomplete="email" required>
+                            <div class="invalid-feedback"></div>
+                            <div class="sugerencia"></div>
+                        </div>
+                        <button type="submit" class="btn btn-acento w-100">Suscribirme</button>
+                    </form>
+                    <div id="mensajeNewsletter" class="mt-2"></div>
+                </div>
+            </div>
+
+            <p class="derechos mb-0">© 2026 Tatuadores Malditos · Proyecto de Desarrollo Full Stack II, Duoc UC</p>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/almacen.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/solicitud.js"></script>
+    <script src="js/validaciones.js"></script>
+    <script src="js/tienda.js"></script>
+</body>
+</html>
