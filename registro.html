@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crea tu cuenta de cliente en Tatuadores Malditos.">
+    <title>Registro de usuario - Tatuadores Malditos</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="registro">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
+    <header class="cabecera">
+        <nav class="navbar navbar-expand-lg navbar-tinta" aria-label="Menú principal">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.svg" alt="" width="34" height="34">
+                    <span>Tatuadores Malditos</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tatuadores.html">Tatuadores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+
+                    <div class="zona-derecha">
+                        <div id="zonaSesion">
+                            <a class="enlace-sesion" href="login.html">Iniciar sesión</a>
+                            <span class="separador-sesion">|</span>
+                            <a class="enlace-sesion" href="registro.html">Registrar usuario</a>
+                        </div>
+                        <a class="btn-solicitud" href="solicitud.html" aria-label="Ver mi solicitud de cita">
+                            <img src="img/solicitud.svg" alt="" width="22" height="22">
+                            <span>Mi solicitud (<span id="contadorSolicitud">0</span>)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido" class="pagina-formulario">
+        <div class="container">
+            <section class="tarjeta-formulario" aria-labelledby="tituloFormulario">
+                <h1 id="tituloFormulario">Registro de usuario</h1>
+                <div id="mensajeFormulario"></div>
+                <div id="resumenErrores" aria-live="polite"></div>
+                <form id="formUsuario" novalidate>
+                    <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="run" class="form-label">RUN</label>
+                        <input type="text" class="form-control" id="run" name="run" autocomplete="off" required placeholder="Ej: 19011022K" inputmode="text">
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">Sin puntos ni guion, entre 7 y 9 caracteres.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="given-name" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos" autocomplete="family-name" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-12">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="correo" name="correo" autocomplete="email" required>
+                        <div class="invalid-feedback"></div>
+                        <div class="sugerencia" aria-live="polite"></div>
+                        <div class="form-text">Solo correos @duoc.cl, @profesor.duoc.cl o @gmail.com.</div>
+                    </div>
+                    <div class="col-12">
+                        <label for="confirmarCorreo" class="form-label">Confirmar correo</label>
+                        <input type="email" class="form-control" id="confirmarCorreo" name="confirmarCorreo" autocomplete="email" required>
+                        <div class="invalid-feedback"></div>
+                        <div class="sugerencia" aria-live="polite"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" autocomplete="new-password" required>
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text" id="ayudaPassword">Entre 4 y 10 caracteres.</div>
+                        <div class="contador text-muted" aria-live="polite"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="confirmarPassword" class="form-label">Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="confirmarPassword" name="confirmarPassword" autocomplete="new-password" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telefono" class="form-label">Teléfono <span class="text-muted fw-normal">(opcional)</span></label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" autocomplete="tel-national" placeholder="Ej: 912345678">
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">9 dígitos, empieza con 9.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="fechaNacimiento" class="form-label">Fecha de nacimiento <span class="text-muted fw-normal">(opcional)</span></label>
+                        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" autocomplete="bday">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="region" class="form-label">Región</label>
+                        <select class="form-select" id="region" name="region" autocomplete="address-level1" required></select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="comuna" class="form-label">Comuna</label>
+                        <select class="form-select" id="comuna" name="comuna" autocomplete="address-level2" required></select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-12">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" autocomplete="street-address" required>
+                        <div class="invalid-feedback"></div>
+                        <div class="contador text-muted" aria-live="polite"></div>
+                    </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-acento btn-lg" id="btnGuardarUsuario">Registrar</button>
+                    </div>
+                </form>
+                <p class="text-center mt-3 mb-0">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="pie">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h2>Tatuadores Malditos</h2>
+                    <p>Marketplace que conecta a clientes con tatuadores: explora perfiles, mira sus trabajos y envía tu solicitud de cita.</p>
+                    <p class="mb-0">
+                        contacto@tatuadoresmalditos.cl<br>
+                        Santiago, Chile
+                    </p>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <h2>Estilos</h2>
+                    <ul>
+                        <li><a href="tatuadores.html?estilo=Realismo">Realismo</a></li>
+                        <li><a href="tatuadores.html?estilo=Tradicional">Tradicional</a></li>
+                        <li><a href="tatuadores.html?estilo=Blackwork">Blackwork</a></li>
+                        <li><a href="tatuadores.html?estilo=Neotradicional">Neotradicional</a></li>
+                        <li><a href="tatuadores.html?estilo=Minimalista">Minimalista</a></li>
+                    </ul>
+                    <h2 class="mt-3">Información</h2>
+                    <ul>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h2>Newsletter</h2>
+                    <p>Suscríbete y entérate de los nuevos tatuadores y de sus cupos disponibles.</p>
+                    <form id="formNewsletter" novalidate>
+                        <div class="mb-2">
+                            <label for="correoNewsletter" class="visually-hidden">Correo para el newsletter</label>
+                            <input type="email" class="form-control" id="correoNewsletter" name="correoNewsletter" placeholder="Tu correo (ej: nombre@gmail.com)" autocomplete="email" required>
+                            <div class="invalid-feedback"></div>
+                            <div class="sugerencia"></div>
+                        </div>
+                        <button type="submit" class="btn btn-acento w-100">Suscribirme</button>
+                    </form>
+                    <div id="mensajeNewsletter" class="mt-2"></div>
+                </div>
+            </div>
+
+            <p class="derechos mb-0">© 2026 Tatuadores Malditos · Proyecto de Desarrollo Full Stack II, Duoc UC</p>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/almacen.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/solicitud.js"></script>
+    <script src="js/validaciones.js"></script>
+    <script src="js/form-usuario.js"></script>
+    <script src="js/registro.js"></script>
+    <script src="js/tienda.js"></script>
+</body>
+</html>

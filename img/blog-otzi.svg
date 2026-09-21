@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<defs><linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9d0e6"/><stop offset="1" stop-color="#e8eff6"/></linearGradient></defs>
+<rect width="800" height="450" fill="url(#cielo)"/>
+<circle cx="640" cy="90" r="42" fill="#f6e7b4"/>
+<polygon points="0,450 0,300 150,170 260,270 380,120 520,280 640,190 800,320 800,450" fill="#7b8ba0"/>
+<polygon points="380,120 335,175 365,168 380,190 400,165 425,178" fill="#ffffff"/>
+<polygon points="150,170 118,205 140,200 152,215 168,198 184,208" fill="#ffffff"/>
+<polygon points="0,450 0,360 120,300 240,350 380,290 520,350 660,300 800,370 800,450" fill="#4f5d70"/>
+<g stroke="#b8213c" stroke-width="6" stroke-linecap="round">
+<line x1="90" y1="392" x2="90" y2="418"/><line x1="112" y1="392" x2="112" y2="418"/><line x1="134" y1="392" x2="134" y2="418"/>
+<line x1="156" y1="392" x2="156" y2="418"/><line x1="178" y1="392" x2="178" y2="418"/><line x1="200" y1="392" x2="200" y2="418"/>
+</g>
+</svg>

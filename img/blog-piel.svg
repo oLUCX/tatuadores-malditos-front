@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<rect width="800" height="450" fill="#f4f1ea"/>
+<rect x="60" y="120" width="680" height="40" fill="#f0c3a5"/>
+<rect x="60" y="160" width="680" height="130" fill="#dc9a7c"/>
+<rect x="60" y="290" width="680" height="110" fill="#e9c98a"/>
+<g fill="#16161d">
+<circle cx="300" cy="210" r="7"/><circle cx="330" cy="225" r="6"/><circle cx="360" cy="205" r="7"/>
+<circle cx="390" cy="232" r="6"/><circle cx="420" cy="214" r="7"/><circle cx="450" cy="228" r="6"/>
+<circle cx="345" cy="245" r="5"/><circle cx="405" cy="250" r="5"/>
+</g>
+<line x1="375" y1="40" x2="375" y2="205" stroke="#16161d" stroke-width="4"/>
+<polygon points="365,205 385,205 375,225" fill="#16161d"/>
+<rect x="362" y="30" width="26" height="30" rx="6" fill="#b8213c"/>
+<g font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#16161d">
+<text x="80" y="146">Epidermis</text>
+<text x="80" y="232">Dermis (aquí queda la tinta)</text>
+<text x="80" y="350">Hipodermis</text>
+</g>
+</svg>
