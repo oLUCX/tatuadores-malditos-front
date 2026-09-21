@@ -1,0 +1,915 @@
+/* ==========================================================
+   Tatuadores Malditos - hoja de estilos externa
+   Esta misma hoja se enlaza en TODAS las paginas (tienda y admin).
+   Va encima de Bootstrap: Bootstrap pone la base y aqui
+   personalizamos colores, tarjetas, solicitud de cita y el panel admin.
+   ========================================================== */
+
+/* ---------- Variables (colores del proyecto) ---------- */
+:root {
+    --tinta: #16161d;
+    --tinta-suave: #23232e;
+    --acento: #b8213c;
+    --acento-hover: #931831;
+    --fondo: #f4f4f6;
+    --texto: #1c1c22;
+    --texto-suave: #5d5d6a;
+    --borde: #dcdce3;
+    --blanco: #ffffff;
+    --sombra: 0 4px 14px rgba(22, 22, 29, 0.08);
+}
+
+/* ---------- Base ---------- */
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+a {
+    color: var(--acento);
+}
+
+a:hover {
+    color: var(--acento-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* link para saltar directo al contenido (accesibilidad con teclado) */
+.salto {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--acento);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    z-index: 2000;
+}
+
+.salto:focus {
+    left: 0;
+}
+
+/* ---------- Botones ---------- */
+.btn-acento {
+    background-color: var(--acento);
+    border-color: var(--acento);
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-acento:hover,
+.btn-acento:focus {
+    background-color: var(--acento-hover);
+    border-color: var(--acento-hover);
+    color: #fff;
+}
+
+.btn-acento:disabled {
+    background-color: #9a9aa5;
+    border-color: #9a9aa5;
+}
+
+.btn-filtro {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    color: var(--texto);
+    border-radius: 999px;
+    padding: 0.3rem 1rem;
+}
+
+.btn-filtro:hover {
+    border-color: var(--acento);
+    color: var(--acento);
+}
+
+.btn-filtro.activo {
+    background: var(--tinta);
+    border-color: var(--tinta);
+    color: #fff;
+}
+
+/* ---------- Cabecera y menu ---------- */
+.cabecera {
+    background-color: var(--tinta);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-tinta {
+    padding: 0.6rem 0;
+}
+
+.navbar-tinta .navbar-brand {
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.navbar-tinta .nav-link {
+    color: #d5d5dd;
+    padding: 0.5rem 0.9rem;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-tinta .nav-link:hover,
+.navbar-tinta .nav-link.active {
+    color: #fff;
+    border-bottom-color: var(--acento);
+}
+
+.navbar-tinta .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-tinta .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.zona-derecha {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#zonaSesion {
+    font-size: 0.9rem;
+}
+
+.enlace-sesion {
+    color: #d5d5dd;
+    text-decoration: none;
+}
+
+.enlace-sesion:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.separador-sesion {
+    color: #6e6e7b;
+    margin: 0 0.4rem;
+}
+
+.saludo-sesion {
+    color: #fff;
+}
+
+.btn-solicitud {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    padding: 0.3rem 0.8rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.btn-solicitud:hover {
+    background: var(--acento);
+    border-color: var(--acento);
+    color: #fff;
+}
+
+/* ---------- Hero (componente principal del home) ---------- */
+.hero {
+    background: linear-gradient(120deg, var(--tinta) 0%, #2d1520 100%);
+    color: #fff;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #ff6b81;
+}
+
+.hero p.lead {
+    color: #d5d5dd;
+    max-width: 34rem;
+}
+
+.hero img {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Secciones ---------- */
+.seccion {
+    padding: 3rem 0;
+}
+
+.seccion-oscura {
+    background: var(--tinta);
+    color: #fff;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+.subtitulo-seccion {
+    text-align: center;
+    color: var(--texto-suave);
+    margin-bottom: 2rem;
+}
+
+.seccion-oscura .subtitulo-seccion {
+    color: #b9b9c4;
+}
+
+/* ---------- Tarjetas de tatuador ---------- */
+.tarjeta-tatuador {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-tatuador:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.imagen-tatuador {
+    display: block;
+    background: var(--tinta-suave);
+}
+
+.imagen-tatuador img {
+    display: block;
+    width: 100%;
+}
+
+.cuerpo-tatuador {
+    padding: 0.9rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+}
+
+.etiqueta-categoria {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--acento);
+    font-weight: 700;
+}
+
+.nombre-tatuador {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.nombre-tatuador a {
+    color: var(--texto);
+    text-decoration: none;
+}
+
+.nombre-tatuador a:hover {
+    color: var(--acento);
+}
+
+.fila-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.precio {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* ---------- Video ---------- */
+.contenedor-video video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Tatuadores (filtros) ---------- */
+.barra-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.grupo-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* ---------- Perfil del tatuador ---------- */
+.galeria {
+    background: var(--tinta-suave);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 0 0.8rem;
+}
+
+.galeria img {
+    display: block;
+    width: 100%;
+}
+
+.miniaturas {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.miniatura {
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    background: none;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+}
+
+.miniatura.activa,
+.miniatura:hover {
+    border-color: var(--acento);
+}
+
+.miniatura img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-detalle h1 {
+    font-size: 1.9rem;
+}
+
+.precio-detalle {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.selector-horas {
+    max-width: 8rem;
+}
+
+/* ---------- Solicitud de cita ---------- */
+.fila-solicitud {
+    display: grid;
+    grid-template-columns: 90px 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.fila-solicitud img {
+    border-radius: 8px;
+    display: block;
+}
+
+.fila-solicitud h3 {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.control-horas {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.horas-actuales {
+    min-width: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.precio-linea {
+    font-weight: 700;
+    min-width: 5.5rem;
+    text-align: right;
+}
+
+.resumen-solicitud {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 1.2rem;
+    position: sticky;
+    top: 5.5rem;
+}
+
+.resumen-solicitud .total {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.solicitud-vacia {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: var(--blanco);
+    border: 1px dashed var(--borde);
+    border-radius: 10px;
+}
+
+/* ---------- Formularios ---------- */
+.pagina-formulario {
+    padding: 3rem 0;
+}
+
+.tarjeta-formulario {
+    background: var(--blanco);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    padding: 2rem;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.tarjeta-formulario.angosta {
+    max-width: 460px;
+}
+
+.tarjeta-formulario h1,
+.tarjeta-formulario h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.encabezado-formulario {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.encabezado-formulario img {
+    display: block;
+    margin: 0 auto 0.4rem;
+}
+
+.encabezado-formulario .nombre-empresa {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.sugerencia {
+    color: #8a5a00;
+    font-size: 0.85rem;
+    min-height: 0;
+}
+
+.contador {
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.caja-dev {
+    border: 1px dashed #b3b3bf;
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin-top: 1.4rem;
+    background: #fafafc;
+    font-size: 0.85rem;
+}
+
+.caja-dev .etiqueta-dev {
+    background: var(--tinta);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* ---------- Blogs ---------- */
+.tarjeta-blog {
+    background: #e8e8ee;
+    border-radius: 12px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.tarjeta-blog h2 {
+    font-size: 1.7rem;
+}
+
+.tarjeta-blog img {
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+}
+
+.articulo-blog {
+    background: var(--blanco);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    padding: 2rem;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.articulo-blog img {
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+}
+
+.articulo-blog figcaption {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    margin-top: 0.4rem;
+}
+
+/* ---------- Nosotros ---------- */
+.tarjeta-persona {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    height: 100%;
+}
+
+.tarjeta-persona img {
+    border-radius: 50%;
+    margin-bottom: 0.8rem;
+}
+
+.dato-estudio {
+    background: var(--blanco);
+    border-left: 4px solid var(--acento);
+    padding: 1rem 1.2rem;
+    border-radius: 0 8px 8px 0;
+    height: 100%;
+}
+
+/* ---------- Footer ---------- */
+.pie {
+    background: var(--tinta);
+    color: #b9b9c4;
+    padding: 3rem 0 1.2rem;
+    margin-top: 3rem;
+}
+
+.pie h2 {
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.pie a {
+    color: #b9b9c4;
+    text-decoration: none;
+}
+
+.pie a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.pie ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pie .derechos {
+    border-top: 1px solid #34343f;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.pie .form-control {
+    background: var(--tinta-suave);
+    border-color: #3d3d4a;
+    color: #fff;
+}
+
+.pie .form-control::placeholder {
+    color: #8a8a97;
+}
+
+.pie .sugerencia {
+    color: #ffd27a;
+}
+
+.pie .invalid-feedback {
+    color: #ff8fa0;
+}
+
+/* ==========================================================
+   PANEL DE ADMINISTRACION
+   ========================================================== */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-menu {
+    width: 250px;
+    flex-shrink: 0;
+    background: var(--tinta);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 1rem;
+}
+
+.admin-menu .marca {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #34343f;
+    margin-bottom: 1rem;
+}
+
+.admin-menu .nav-link {
+    color: #c9c9d3;
+    border-radius: 6px;
+    padding: 0.55rem 0.8rem;
+}
+
+.admin-menu .nav-link:hover {
+    background: var(--tinta-suave);
+    color: #fff;
+}
+
+.admin-menu .nav-link.active {
+    background: var(--acento);
+    color: #fff;
+}
+
+.menu-pie {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #34343f;
+    font-size: 0.85rem;
+}
+
+.menu-pie span {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #c9c9d3;
+}
+
+.admin-contenido {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-cabecera {
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+    padding: 1rem 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.admin-cabecera h1 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.admin-principal {
+    padding: 1.6rem;
+    flex: 1;
+}
+
+.admin-pie {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+    border-top: 1px solid var(--borde);
+    background: var(--blanco);
+}
+
+.tarjeta-dato {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 1.2rem;
+    height: 100%;
+}
+
+.tarjeta-dato .numero {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.tarjeta-dato .rotulo {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.tarjeta-dato.critica .numero {
+    color: var(--acento);
+}
+
+.panel-tabla {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.miniatura-tabla {
+    border-radius: 6px;
+    object-fit: cover;
+    background: var(--tinta-suave);
+}
+
+.vista-previa {
+    max-height: 160px;
+    border-radius: 8px;
+    border: 1px solid var(--borde);
+}
+
+/* ==========================================================
+   RESPONSIVO (celulares y tablets)
+   ========================================================== */
+@media (max-width: 991px) {
+    .zona-derecha {
+        padding: 0.6rem 0;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 2.5rem 0;
+    }
+
+    .hero p.lead {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .fila-solicitud {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .fila-solicitud .control-horas,
+    .fila-solicitud .precio-linea {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .resumen-solicitud {
+        position: static;
+    }
+
+    .tarjeta-formulario {
+        padding: 1.4rem;
+    }
+
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .admin-menu {
+        width: 100%;
+    }
+
+    .admin-menu .nav {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+    }
+
+    .admin-principal {
+        padding: 1rem;
+    }
+}
+
+/* etiqueta chica arriba del titulo del hero */
+.etiqueta-hero {
+    color: #ff9aa9;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+/* celulares chicos: el nombre de la marca se achica para que quepa con el boton del menu */
+@media (max-width: 575px) {
+    .navbar-tinta .navbar-brand {
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        margin-right: 0;
+    }
+
+    .navbar-tinta .navbar-brand img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ---------- Detalles del marketplace ---------- */
+.meta-tatuador {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.insignia-cupos {
+    display: inline-block;
+    align-self: flex-start;
+    background: #fff1d6;
+    color: #8a5a00;
+    border: 1px solid #f0d48f;
+    border-radius: 999px;
+    padding: 0 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.etiqueta-galeria {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--texto-suave);
+    margin: 0 0 0.4rem;
+}
+
+.paso-numero {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--acento);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.grupo-filtros input[type="search"] {
+    min-width: 16rem;
+}
