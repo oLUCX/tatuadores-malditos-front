@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de administración de Tatuadores Malditos: Solicitudes">
+    <title>Solicitudes - Administración</title>
+    <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="admin" data-pagina="solicitudes">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
+    <div class="admin-layout">
+        <aside class="admin-menu">
+            <a class="marca" href="index.html">
+                <img src="../img/logo.svg" alt="" width="34" height="34">
+                <span>Tatuadores Malditos</span>
+            </a>
+
+            <nav aria-label="Menú de administración">
+                <ul class="nav flex-column">
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link" href="index.html">Dashboard</a></li>
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link active" href="solicitudes.html" aria-current="page">Solicitudes</a></li>
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link" href="tatuadores.html">Tatuadores</a></li>
+                    <li class="nav-item" data-solo="Administrador"><a class="nav-link" href="usuarios.html">Usuarios</a></li>
+                    <li class="nav-item" data-solo="Tatuador"><a class="nav-link enlace-mi-perfil" id="linkMiPerfil" href="tatuador-form.html">Mi perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Ver marketplace</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-pie">
+                <span id="nombreAdmin"></span>
+                <button type="button" id="btnCerrarSesionAdmin" class="btn btn-outline-light btn-sm w-100">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <div class="admin-contenido">
+            <header class="admin-cabecera">
+                <h1>Solicitudes de cita</h1>
+            </header>
+
+            <main class="admin-principal" id="contenido">
+                <div id="avisoAdmin"></div>
+
+                <section class="panel-tabla" aria-label="Listado de solicitudes">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <caption class="visually-hidden">Lista de solicitudes de cita</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">N°</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Cliente</th>
+                                    <th scope="col">Tatuador</th>
+                                    <th scope="col" class="text-end">Horas</th>
+                                    <th scope="col" class="text-end">Total estimado</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col" class="text-end">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaSolicitudes"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="admin-pie">
+                Panel de administración · Tatuadores Malditos · Proyecto Full Stack II, Duoc UC
+            </footer>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="tituloDetalle" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="tituloDetalle"></h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="cuerpoDetalle"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../vendor/bootstrap.bundle.min.js"></script>
+    <script src="../js/datos.js"></script>
+    <script src="../js/almacen.js"></script>
+    <script src="../js/sesion.js"></script>
+    <script src="../js/solicitud.js"></script>
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
