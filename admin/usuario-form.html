@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de administración de Tatuadores Malditos: Usuario">
+    <title>Usuario - Administración</title>
+    <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="admin" data-pagina="usuario-form">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
+    <div class="admin-layout">
+        <aside class="admin-menu">
+            <a class="marca" href="index.html">
+                <img src="../img/logo.svg" alt="" width="34" height="34">
+                <span>Tatuadores Malditos</span>
+            </a>
+
+            <nav aria-label="Menú de administración">
+                <ul class="nav flex-column">
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link" href="index.html">Dashboard</a></li>
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link" href="solicitudes.html">Solicitudes</a></li>
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link" href="tatuadores.html">Tatuadores</a></li>
+                    <li class="nav-item" data-solo="Administrador"><a class="nav-link active" href="usuarios.html" aria-current="page">Usuarios</a></li>
+                    <li class="nav-item" data-solo="Tatuador"><a class="nav-link enlace-mi-perfil" id="linkMiPerfil" href="tatuador-form.html">Mi perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Ver marketplace</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-pie">
+                <span id="nombreAdmin"></span>
+                <button type="button" id="btnCerrarSesionAdmin" class="btn btn-outline-light btn-sm w-100">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <div class="admin-contenido">
+            <header class="admin-cabecera">
+                <h1 id="tituloFormulario">Nuevo usuario</h1>
+                <a class="btn btn-outline-dark" href="usuarios.html">Volver a la lista</a>
+            </header>
+
+            <main class="admin-principal" id="contenido">
+                <div id="mensajeFormulario"></div>
+
+                <section class="panel-tabla" aria-label="Formulario de usuario">
+                    <div id="resumenErrores" aria-live="polite"></div>
+                <form id="formUsuario" novalidate>
+                    <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="run" class="form-label">RUN</label>
+                        <input type="text" class="form-control" id="run" name="run" autocomplete="off" required placeholder="Ej: 19011022K" inputmode="text">
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">Sin puntos ni guion, entre 7 y 9 caracteres.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="tipo" class="form-label">Tipo de usuario</label>
+                        <select class="form-select" id="tipo" name="tipo" autocomplete="off" required><option value="">-- Seleccione el tipo --</option><option value="Administrador">Administrador</option><option value="Cliente">Cliente</option><option value="Tatuador">Tatuador</option></select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-6 d-none" id="grupoPerfil">
+                        <label for="perfilTatuador" class="form-label">Perfil de tatuador asociado</label>
+                        <select class="form-select" id="perfilTatuador" name="perfilTatuador" autocomplete="off" required></select>
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">Es el perfil publicado que este usuario podrá editar desde «Mi perfil».</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="given-name" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos" autocomplete="family-name" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-12">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="correo" name="correo" autocomplete="email" required>
+                        <div class="invalid-feedback"></div>
+                        <div class="sugerencia" aria-live="polite"></div>
+                        <div class="form-text">Solo correos @duoc.cl, @profesor.duoc.cl o @gmail.com.</div>
+                    </div>
+                    <div class="col-12">
+                        <label for="confirmarCorreo" class="form-label">Confirmar correo</label>
+                        <input type="email" class="form-control" id="confirmarCorreo" name="confirmarCorreo" autocomplete="email" required>
+                        <div class="invalid-feedback"></div>
+                        <div class="sugerencia" aria-live="polite"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" autocomplete="new-password" required>
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text" id="ayudaPassword">Entre 4 y 10 caracteres.</div>
+                        <div class="contador text-muted" aria-live="polite"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="confirmarPassword" class="form-label">Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="confirmarPassword" name="confirmarPassword" autocomplete="new-password" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telefono" class="form-label">Teléfono <span class="text-muted fw-normal">(opcional)</span></label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" autocomplete="tel-national" placeholder="Ej: 912345678">
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">9 dígitos, empieza con 9.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="fechaNacimiento" class="form-label">Fecha de nacimiento <span class="text-muted fw-normal">(opcional)</span></label>
+                        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" autocomplete="bday">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="region" class="form-label">Región</label>
+                        <select class="form-select" id="region" name="region" autocomplete="address-level1" required></select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="comuna" class="form-label">Comuna</label>
+                        <select class="form-select" id="comuna" name="comuna" autocomplete="address-level2" required></select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-12">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" autocomplete="street-address" required>
+                        <div class="invalid-feedback"></div>
+                        <div class="contador text-muted" aria-live="polite"></div>
+                    </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-acento btn-lg" id="btnGuardarUsuario">Guardar usuario</button>
+                    </div>
+                </form>
+                </section>
+            </main>
+
+            <footer class="admin-pie">
+                Panel de administración · Tatuadores Malditos · Proyecto Full Stack II, Duoc UC
+            </footer>
+        </div>
+    </div>
+
+    <script src="../vendor/bootstrap.bundle.min.js"></script>
+    <script src="../js/datos.js"></script>
+    <script src="../js/almacen.js"></script>
+    <script src="../js/sesion.js"></script>
+    <script src="../js/solicitud.js"></script>
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/form-usuario.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

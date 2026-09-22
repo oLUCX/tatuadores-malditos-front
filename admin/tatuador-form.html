@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de administración de Tatuadores Malditos: Tatuador">
+    <title>Tatuador - Administración</title>
+    <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="admin" data-pagina="tatuador-form">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
+    <div class="admin-layout">
+        <aside class="admin-menu">
+            <a class="marca" href="index.html">
+                <img src="../img/logo.svg" alt="" width="34" height="34">
+                <span>Tatuadores Malditos</span>
+            </a>
+
+            <nav aria-label="Menú de administración">
+                <ul class="nav flex-column">
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link" href="index.html">Dashboard</a></li>
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link" href="solicitudes.html">Solicitudes</a></li>
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link active" href="tatuadores.html" aria-current="page">Tatuadores</a></li>
+                    <li class="nav-item" data-solo="Administrador"><a class="nav-link" href="usuarios.html">Usuarios</a></li>
+                    <li class="nav-item" data-solo="Tatuador"><a class="nav-link enlace-mi-perfil" id="linkMiPerfil" href="tatuador-form.html">Mi perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Ver marketplace</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-pie">
+                <span id="nombreAdmin"></span>
+                <button type="button" id="btnCerrarSesionAdmin" class="btn btn-outline-light btn-sm w-100">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <div class="admin-contenido">
+            <header class="admin-cabecera">
+                <h1 id="tituloFormulario">Nuevo tatuador</h1>
+                <a class="btn btn-outline-dark" href="tatuadores.html">Volver a la lista</a>
+            </header>
+
+            <main class="admin-principal" id="contenido">
+                <div id="mensajeFormulario"></div>
+
+                <section class="panel-tabla" aria-label="Formulario de tatuador">
+                    <div id="resumenErrores" aria-live="polite"></div>
+                    <form id="formTatuador" novalidate>
+                        <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="codigo" class="form-label">Código del tatuador</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" autocomplete="off" required placeholder="Ej: TAT013">
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">Mínimo 3 caracteres. No se puede repetir ni cambiar después.</div>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="nombre" class="form-label">Nombre artístico</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="off" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                            <div class="col-12">
+                                <label for="descripcion" class="form-label">Descripción o biografía <span class="text-muted fw-normal">(opcional)</span></label>
+                                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" autocomplete="off"></textarea>
+                                <div class="invalid-feedback"></div>
+                                <div class="contador text-muted" aria-live="polite"></div>
+                            </div>
+                    <div class="col-md-4">
+                        <label for="precio" class="form-label">Precio por hora (CLP)</label>
+                        <input type="number" class="form-control" id="precio" name="precio" autocomplete="off" required step="any" min="0" inputmode="decimal">
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">Puede tener decimales. Con precio 0 se muestra como consulta gratis.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="cupos" class="form-label">Cupos disponibles este mes</label>
+                        <input type="number" class="form-control" id="cupos" name="cupos" autocomplete="off" required step="1" min="0" inputmode="numeric">
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">Cantidad de sesiones que puedes tomar (número entero).</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="cuposCriticos" class="form-label">Cupos críticos <span class="text-muted fw-normal">(opcional)</span></label>
+                        <input type="number" class="form-control" id="cuposCriticos" name="cuposCriticos" autocomplete="off" step="1" min="0" inputmode="numeric">
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">Se muestra una alerta cuando los cupos sean iguales o menores a este número.</div>
+                    </div>
+                            <div class="col-12">
+                                <p id="avisoGratis" class="text-success mb-0 d-none">Con precio 0 este tatuador se mostrará como «Consulta gratis».</p>
+                                <div id="avisoCupos" class="alert alert-warning mb-0 d-none" role="alert"></div>
+                            </div>
+                    <div class="col-md-4">
+                        <label for="estilo" class="form-label">Estilo</label>
+                        <select class="form-select" id="estilo" name="estilo" autocomplete="off" required></select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="ciudad" class="form-label">Ciudad</label>
+                        <select class="form-select" id="ciudad" name="ciudad" autocomplete="off" required></select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="estudio" class="form-label">Estudio <span class="text-muted fw-normal">(opcional)</span></label>
+                        <input type="text" class="form-control" id="estudio" name="estudio" autocomplete="off" placeholder="Ej: Tinta Negra Studio">
+                        <div class="invalid-feedback"></div>
+                        <div class="form-text">Déjalo en blanco si trabajas de forma independiente.</div>
+                    </div>
+                            <div class="col-md-6">
+                                <label for="imagen" class="form-label">Foto de trabajo <span class="text-muted fw-normal">(opcional)</span></label>
+                                <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+                                <div class="invalid-feedback"></div>
+                                <div class="form-text">JPG, PNG o SVG de hasta 500 KB. Es la imagen principal de tu perfil.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <img id="vistaPrevia" class="vista-previa d-none" alt="Vista previa de la imagen del perfil" width="160" height="160">
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-4">
+                            <button type="submit" class="btn btn-acento btn-lg" id="btnGuardarTatuador">Guardar tatuador</button>
+                            <a class="btn btn-outline-secondary btn-lg" href="tatuadores.html">Cancelar</a>
+                        </div>
+                    </form>
+                </section>
+            </main>
+
+            <footer class="admin-pie">
+                Panel de administración · Tatuadores Malditos · Proyecto Full Stack II, Duoc UC
+            </footer>
+        </div>
+    </div>
+
+    <script src="../vendor/bootstrap.bundle.min.js"></script>
+    <script src="../js/datos.js"></script>
+    <script src="../js/almacen.js"></script>
+    <script src="../js/sesion.js"></script>
+    <script src="../js/solicitud.js"></script>
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

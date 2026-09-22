@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de administración de Tatuadores Malditos: Dashboard">
+    <title>Dashboard - Administración</title>
+    <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="admin" data-pagina="dashboard">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
+    <div class="admin-layout">
+        <aside class="admin-menu">
+            <a class="marca" href="index.html">
+                <img src="../img/logo.svg" alt="" width="34" height="34">
+                <span>Tatuadores Malditos</span>
+            </a>
+
+            <nav aria-label="Menú de administración">
+                <ul class="nav flex-column">
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link active" href="index.html" aria-current="page">Dashboard</a></li>
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link" href="solicitudes.html">Solicitudes</a></li>
+                    <li class="nav-item" data-solo="Administrador,Tatuador"><a class="nav-link" href="tatuadores.html">Tatuadores</a></li>
+                    <li class="nav-item" data-solo="Administrador"><a class="nav-link" href="usuarios.html">Usuarios</a></li>
+                    <li class="nav-item" data-solo="Tatuador"><a class="nav-link enlace-mi-perfil" id="linkMiPerfil" href="tatuador-form.html">Mi perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Ver marketplace</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-pie">
+                <span id="nombreAdmin"></span>
+                <button type="button" id="btnCerrarSesionAdmin" class="btn btn-outline-light btn-sm w-100">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <div class="admin-contenido">
+            <header class="admin-cabecera">
+                <div>
+                    <h1 id="saludo">¡HOLA!</h1>
+                    <p class="mb-0 text-muted" id="subSaludo"></p>
+                </div>
+            </header>
+
+            <main class="admin-principal" id="contenido">
+                <div id="alertaCupos"></div>
+
+                <section aria-label="Resumen del marketplace">
+                    <div class="row g-3">
+                        <div class="col-6 col-lg" data-solo="Administrador">
+                            <article class="tarjeta-dato"><p class="numero mb-1" id="totalTatuadores">0</p><p class="rotulo mb-0">Tatuadores</p></article>
+                        </div>
+                        <div class="col-6 col-lg">
+                            <article class="tarjeta-dato"><p class="numero mb-1" id="totalSolicitudes">0</p><p class="rotulo mb-0">Solicitudes</p></article>
+                        </div>
+                        <div class="col-6 col-lg">
+                            <article class="tarjeta-dato"><p class="numero mb-1" id="totalPendientes">0</p><p class="rotulo mb-0">Pendientes</p></article>
+                        </div>
+                        <div class="col-6 col-lg" data-solo="Administrador">
+                            <article class="tarjeta-dato"><p class="numero mb-1" id="totalUsuarios">0</p><p class="rotulo mb-0">Usuarios</p></article>
+                        </div>
+                        <div class="col-6 col-lg" data-solo="Administrador">
+                            <article class="tarjeta-dato critica"><p class="numero mb-1" id="totalCriticos">0</p><p class="rotulo mb-0">Con cupos críticos</p></article>
+                        </div>
+                        <div class="col-6 col-lg" data-solo="Tatuador">
+                            <article class="tarjeta-dato critica"><p class="numero mb-1" id="misCupos">0</p><p class="rotulo mb-0">Mis cupos este mes</p></article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel-tabla mt-4" aria-labelledby="tituloAccesos">
+                    <h2 class="h5" id="tituloAccesos">Accesos rápidos</h2>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a class="btn btn-outline-dark" href="solicitudes.html">Ver solicitudes</a>
+                        <a class="btn btn-outline-dark" href="tatuadores.html">Ver tatuadores</a>
+                        <a class="btn btn-acento enlace-mi-perfil" href="tatuador-form.html" data-solo="Tatuador">Editar mi perfil</a>
+                        <a class="btn btn-acento" href="tatuador-form.html" data-solo="Administrador">Nuevo tatuador</a>
+                        <a class="btn btn-outline-dark" href="usuarios.html" data-solo="Administrador">Administrar usuarios</a>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="admin-pie">
+                Panel de administración · Tatuadores Malditos · Proyecto Full Stack II, Duoc UC
+            </footer>
+        </div>
+    </div>
+
+    <script src="../vendor/bootstrap.bundle.min.js"></script>
+    <script src="../js/datos.js"></script>
+    <script src="../js/almacen.js"></script>
+    <script src="../js/sesion.js"></script>
+    <script src="../js/solicitud.js"></script>
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
